@@ -3,97 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>listas</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+    <style>
+        /* Estilos específicos para la página */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white; /* Cambia el color de fondo */
+            color: black; /* Cambia el color del texto */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Permite que las tarjetas se ajusten automáticamente a la pantalla */
+            justify-content: center;
+            padding: 20px; /* Añade espacio entre las tarjetas y el borde de la ventana */
+        }
+        .card {
+            width: 250px; /* Define el ancho de las tarjetas */
+            background-color: #fff; /* Cambia el color de fondo de las tarjetas */
+            border-radius: 10px; /* Añade esquinas redondeadas a las tarjetas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra a las tarjetas */
+            margin: 10px; /* Añade espacio entre las tarjetas */
+            padding: 20px; /* Añade espacio interno dentro de las tarjetas */
+            text-align: center; /* Centra el contenido de las tarjetas */
+        }
+        .card img {
+            max-width: 100px; /* Define el ancho máximo de las imágenes dentro de las tarjetas */
+            max-height: 100px; /* Define la altura máxima de las imágenes dentro de las tarjetas */
+            margin-bottom: 10px; /* Añade espacio entre la imagen y el texto */
+        }
+        .card p {
+            color: black; /* Cambia el color del texto dentro de las tarjetas a negro */
+        }
+    </style>
 </head>
 <body>
-
+  
     <nav class="navbar">
         <!-- LOGO -->
         <div class="logo"><img src="images/LogoBlanco.png" alt=""></div>
-    
+      
         <!-- NAVIGATION MENU -->
         <ul class="nav-links">
-    
-          <!-- USING CHECKBOX HACK -->
-          <input type="checkbox" id="checkbox_toggle" />
-          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-    
-          <!-- NAVIGATION MENUS -->
-          <div class="menu">
-    
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="lista.html">Lista</a></li>
-    
-            <li class="services">
-              <a href="servicios.html">Servicios</a>
-    
-              <!-- DROPDOWN MENU -->
-              <ul class="dropdown">
-                <li><a href="index.html">Inicio </a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+      
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li><a href="registrarse.html">Registrarse</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="bienvenido.html">Bienvenido</a></li>
                 <li><a href="lista.html">Lista</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
-              </ul>
-    
-            </li>
-    
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </div>
+                <li><a href="contacto.html">Contacto</a></li>
+            </div>
         </ul>
       </nav>
+    <div class="container" id="datos"></div>
 
-      <div id="datos">Criptomonedas</div>
+    <script>
+        const settings = {
+            async: true,
+            crossDomain: true,
+            url: 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0',
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '64ece04b01msh85470598e5a401ep1aa9e0jsnbf616c56aa0d',
+                'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+            }
+        };
 
-      <!--Scripts-->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.scrollex.min.js"></script>
+        $.ajax(settings).done(function (response) {
+            const coins = response.data.coins;
+            const datosContainer = $("#datos");
 
-      <script>
-                const settings = {
-                    async: true,
-                    crossDomain: true,
-                    url: 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0',
-                    method: 'GET',
-                    headers: {
-                        'X-RapidAPI-Key': '64ece04b01msh85470598e5a401ep1aa9e0jsnbf616c56aa0d',
-                        'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
-                    }
-                };
-
-                $.ajax(settings).done(function (response) {
-                    console.log(response);
-
-                    const coins = response.data.coins;
-
-                    // Seleccionar el contenedor #datos
-                    const datosContainer = $("#datos");
-
-                    // Iterar sobre las primeras 20 criptomonedas
-                    for (let i = 0; i < 20; i++) {
-                        const coin = coins[i];
-                        // Crear un nuevo elemento div para cada criptomoneda
-                        const coinElement = $("<div>");
-                        coinElement.html(`
-                            <p>Criptoactivo: ${coin.name}</p>
-                            <p>Símbolo: ${coin.symbol}</p>
-                            <p>Precio: ${coin.price}</p>
-                            <p>Capitalización de mercado: ${coin.marketCap}</p>
-                            <img src="${coin.iconUrl}" alt="${coin.name}" style="max-width: 20px; max-height: 20px;">
-                        `);
-
-                        // Agregar el nuevo elemento de la criptomoneda al contenedor #datos
-                        datosContainer.append(coinElement);
-                    }
-                });
-
-      </script>
-    <h1>Lista</h1>
-
-    
+            for (let i = 0; i < 20; i++) {
+                const coin = coins[i];
+                const card = $("<div class='card'>"); // Crear una nueva tarjeta
+                card.html(`
+                    <img src="${coin.iconUrl}" alt="${coin.name}">
+                    <p>Criptoactivo: ${coin.name}</p>
+                    <p>Símbolo: ${coin.symbol}</p>
+                    <p>Precio: ${coin.price}</p>
+                    <p>Capitalización de mercado: ${coin.marketCap}</p>
+                `);
+                datosContainer.append(card);
+            }
+        });
+    </script>
 </body>
 </html>

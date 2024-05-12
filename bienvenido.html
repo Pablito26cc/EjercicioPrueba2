@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <style>
+        body {
+            color: white; /* Cambio de color de las letras a blanco */
+            background-color: black; /* Cambio de color de fondo a negro */
+        }
+
+        h1 {
+            margin-top: 50px; /* Espacio superior */
+            margin-bottom: 20px; /* Espacio inferior */
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-block; /* Alinear el logo con el texto */
+        }
+
+        /* Estilos para el carrusel */
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Espacio superior */
+        }
+        p{text-align: center;
+            color:white; /* Cambia el color del texto a blanco */
+
+        }
+        br {
+          text-align: center;
+        }
+
+        .carousel-item img {
+            max-width: 100%; /* Ajusta el ancho máximo de las imágenes al 100% del contenedor */
+            height: auto; /* Ajusta automáticamente la altura */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo"><img src="images/LogoBlanco.png" alt=""></div>
+      
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+      
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li><a href="registrarse.html">Registrarse</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="bienvenido.html">Bienvenido</a></li>
+                <li><a href="lista.html">Lista</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <h1>BIENVENID@ A BITCOINS INCORPORATED <img src="images/logo.negro.jpg" alt=""></h1>
+    <h1>Bitcoin: ¿qué es y cómo invertir?</h1>
+
+    <div class="carousel-container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/3.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/2.jpg" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+        <p><strong>Qué es el Bitcoin?</strong><br>
+            El Bitcoin es una moneda digital independiente e intangible. Lo que diferencia a esta criptodivisa de una divisa al uso como pueden ser dólares o euros es que no pertenece a ningún Estado. Es decir, son básicamente monedas descentralizadas, ya que no hay ningún banco central, Gobierno o institución financiera que actúe sobre ella.
+            En el caso del euro, el Banco Central Europeo puede intervenir para afectar el precio mediante emisiones masivas de dinero o a través de los tipos de interés. Esto no es posible con el Bitcoin. Es más, sus creadores ya han fijado un límite para el número de bitcoins en circulación: 21 millones.            El control del Bitcoin recae en los propios usuarios. Son estos quienes validan cualquier operación a través de intercambios (Punto a Punto P2P), sin intervención estatal o de cualquier institución. De hecho, la propia estructura hace imposible manipular su valor. Para realizar cualquier cambio es necesario que toda la comunidad de usuarios lo apruebe.
+            El Bitcoin es la primera moneda digital que se popularizó. Lo que diferencia al Bitcoin de otros intentos es su tecnología de cadena de bloques (blockchain).
+            El creador de Bitcoin es anónimo, pero se cree que fue Satoshi Nakamoto. Se trata de un seudónimo, por lo que no se sabe si se trata de una persona o de un conjunto de personas.
+            Satoshi Nakamoto es el nombre que figura como creador del protocolo bitcoin, quien mina el primer bloque de bitcoin y realiza la primera transacción a Hal Finney. Este usuario hizo su última contribución pública al desarrollo de la moneda digital en 2010.
+            <br><br>
+            <strong>¿Quién controla la red bitcoin?</strong><br>
+            Aunque Bitcoin tenga desarrolladores que actúen como cabeza de lanza, nadie controla la moneda digital como nadie puede controlar el desarrollo del email en el sentido de que no tiene un único propietario.
+            Los programadores pueden mejorar el software de Bitcoin, pero no pueden imponer un cambio en el protocolo. Este debe seguir unas mismas reglas para todos y éstas se crean en consenso entre todos los usuarios con sus decisiones sobre qué plataformas eligen para operar, por ejemplo.
+            De hecho, cuando surgen discrepancias sobre Bitcoin se solucionan entre toda la comunidad. A partir de ahí, el control de las transacciones se realiza a través de los propios usuarios, que son los que validan los bloques de la cadena y la seguridad de la transacción. Dado que esta cadena no se puede alterar porque está presente en miles de ordenadores de todo el mundo y que todos deben aprobar cada cambio el control real el de los usuarios de bitcoin.
+            <br><br><br>
+            <strong>¿Cómo funciona el Bitcoin?</strong><br>
+            Para el usuario final Bitcoin es un medio de pago más, como lo puede ser el euro y un activo en el que invertir, como lo puede ser una acción o el petróleo. Entonces, ¿es seguro invertir en Bitcoin o no? Ante esta pregunta, conviene saber que detrás de todo este mercado existe una tecnología que es la que permite que el sistema sea fiable. Se trata de la tecnología de blockchain o cadena de bloques que, entre otras cosas previene el doble gasto de la moneda, es decir, que alguien pueda gastar de nuevo un mismo bitcoin.
+            De forma muy resumida, la red de Bitcoin es un sistema de contabilidad pública de la que cada usuario guarda una copia. Cada vez que alguien realiza una transacción esta queda almacenada en los ordenadores de los usuarios, de manera que se evita lo se conoce como el doble gasto.
+            Javier Molina, experto en criptomonedas, explicaba en este vídeo cómo funcionan el Bitcoin y otras criptomonedas, sus fortalezas y debilidades:
+            <br><br>
+            <strong>¿Qué es el blockchain?</strong><br>
+            El blockchain es la tecnología que está detrás del bitcoin y que actúa al mismo tiempo como base de datos y copia de seguridad del sistema. Como acabamos de ver, en un sistema financiero tradicional, se confía cualquier transacción a una tercera persona (banco, tarjeta de crédito…), que es la que da la validez al proceso. Con la tecnología de bloques, los propios usuarios son quienes lo hacen.
+            El blockchain es como un gran libro de acontecimientos digitales (transacciones en el caso de Bitcoin) compartido y distribuido entre muchas personas. Solo puede actualizarse a partir del consenso de la mayoría de usuarios y, una vez se actualiza, la información no puede ser borrada.
+            En este sentido, cada cadena de bloque que se añade contiene información verificable de todas las transacciones que se han realizado en la historia de bitcoin. <br><br>
+            <strong>¿Es Bitcoin seguro?</strong><br>
+            El Bitcoin como medio de pago es totalmente seguro, ya que para realizar cualquier transacción necesita la autorización de la mayoría de usuarios.
+            La seguridad del Bitcoin se basa también en que para poder acceder a tus bitcoins, necesitarás aportar tu clave privada. Sin esa clave, nadie podrá acceder a tus bitcoins. En el apartado de los monederos te explicamos más en detalle en qué consiste esta clave privada y la diferencia con la dirección pública, es algo así como tu usuario de bitcoins y que servirá para que puedan enviarte y tú puedas enviar monedas.
+            <br><br>
+            <strong>¿Cómo comprar bitcoins?</strong><br>
+            ¿Qué hay que hacer para conseguir un bitcoin? Actualmente, existen tres formas de hacerse con una de estas criptomonedas: minar bitcoin, comprar bitcoin a través de una plataforma y vender algo y que te paguen en bitcoin.
+            Para comprar bitcoins basta con acudir a una de las plataformas de compra de bitcoins. A quienes ya inviertan en Bolsa su funcionamiento les resultará similar, aunque algo diferente al de un bróker al uso.
+            Estas plataformas se denominan exchanges de bitcoins. Dentro de estos exchanges encontramos, como seguridad extra, los wallets o monederos de bitcoin. Existen diferentes tipos de carteras de bitcoins en función de cuestiones como la seguridad y la usabilidad.
+            Por un lado, encontramos los monederos de bitcoin físicos, que a través de un software podemos descargar en nuestro ordenador para después tenerlos en una memoria USB, por ejemplo. Por otro, los monederos online, que pueden encontrarse dentro de una plataforma de exchange, encriptados para una mayor seguridad. Así, aunque la plataforma cayese, tú seguirías teniendo a salvo tus bitcoins.
+            Como usuario puedes usar uno o varios monederos digitales que contarán con sus contraseñas de respaldo y su sistema de encriptación. En este sentido es habitual que los monederos online pidan doble confirmación de claves vía SMS.
+            <br><br>
+            <strong>Qué monedero de bitcoin elegir</strong><br>
+            El mercado de las carteras de bitcoins es amplio. El Bitcoin Wallet que escojas dependerá del uso que quieras hacer y la cantidad de bitcoins que tengas asociados a tu dirección de usuario. Los monederos digitales son adecuados para cantidades pequeñas porque son mucho más rápidos a la hora de operar.
+            Por el contrario, no son tan recomendables para almacenar grandes cantidades. Eso sí, al operar con estos monederos es imprescindible guardar la clave privada que nos darán, ya que será la que nos permitirá después recuperar los bitcoins.
+            <br><br>
+            Como norma general, cuanto mayor sea el número de bitcoins en tu haber, más recomendable será un monedero físico y no constantemente conectado a la red. El peligro en este punto es qué puede pasar si se rompe el dispositivo. De nuevo, la solución pasa por apuntar en papel y tener localizada la clave privada o dirección privada de la cuenta.
+            Al elegir monedero de criptodivisa hay una diferencia entre los que son monederos al uso, con su clave pública y privada, y las plataformas de bitcoin, donde al final es la web la que custodia el dinero y no tú con tus propias claves. Aquí tienes las mejores wallets de criptomonedas.
+            <br><br>
+            <strong>Cómo operar con Bitcoins</strong><br>
+            Una vez elijas tu cartera de bitcoin la operativa es muy similar a la de una compra y venta de acciones. La diferencia es que, dependiendo del método de pago, la orden tardará más o menos en ejecutarse.
+            Pero, al igual que con un bróker al uso, podrás entrar en tu cartera y ver la evolución del bitcoin y su traducción a euros. Lo que sí cambia es que no hay porqué comprar 1 bitcoin entero, simplemente elegir la cantidad a invertir. Eso se traducirá en una porción de bitcoin.
+            En el caso de estas plataformas de trading de bitcoins, las transacciones están controladas por una tercera parte, que es la plataforma. Es decir, la seguridad depende de ellas y son ellas quienes tienen las claves privadas de los bitcoins.
+            <br><br>
+            <strong>Cotización del Bitcoin</strong><br>
+            Para seguir la cotización del bitcoin bastará con conectarte a tu monedero virtual. Allí podrás seguir la evolución del bitcoin y ver cómo fluctúa. De hecho, deberías fijarte en el precio marcado por tu plataforma, ya que la cotización de la moneda digital varía dependiendo del monedero que uses.
+            En este sentido, hay una cosa que debes tener clara al invertir en bitcoin: es un activo muy volátil. Es normal ver grandes oscilaciones en el precio del bitcoin dentro de un mismo día.
+            <br><br>
+            <strong>Ventajas y riesgos de invertir en Bitcoin</strong><br>
+            Los beneficios de invertir en criptomonedas son evidentes. El primero es la rentabilidad que se puede obtener, siempre que se invierta en el momento adecuado. Como con cualquier otro activo, y más tras convertirse en tendencia, el timing de la inversión en bitcoin es crítico.
+            A partir de ahí todo es cuestión de que creas o no en su futuro como alternativa a las monedas tradicionales. Si eres de lo que confía en que este tipo de sistema y el blockchain en general terminará teniendo un hueco, la inversión a largo plazo será interesante.
+            Que especular con el bitcoin sea interesante no quiere decir que no esté exento de riesgos. El más importante es que el bitcoin es muy volátil. De hecho, es extremadamente volátil. Su precio puede sufrir variaciones de más de un 10% en una misma sesión, por lo que especular con las reglas clásicas puede resultar complicado. 
+            <br><br>
+            <strong>Impuestos sobre bitcoins</strong><br>
+            La inversión en bitcoins no está exenta del pago de impuestos. De hecho, habrá que tributar por ellos en la declaración de la renta.
+            Todo lo que debes saber sobre la fiscalidad del Bitcoin y de otras criptodivisas. 
+            Declarar Bitcoin en la Renta 2024
+            Si un usuario ha comprado o ha vendido durante un año tiene que incluir en la declaración de la Renta como una ganancia o pérdida patrimonial. La fiscalidad de los bitcoins en el IRPF es muy similar a la de las acciones o a lo que ocurre cuando reembolsas un fondo de inversión.
+            Para que lo entiendas mejor, al hacer la renta deberás incluir en el apartado de ganancias y pérdidas patrimoniales el resultado de la operación. Para ello deberás restar el precio de compra al precio de venta. Si es positivo, será una ganancia. En caso contrario, se tratará de una pérdida. Esa cifra se integrará con el resto de ganancias o pérdidas patrimoniales para tributar bajo los tipos del ahorro.
+            <br><br>
+            <strong>Los Bitcoins en el Impuesto sobre el Patrimonio</strong><br>
+            Mientras tengas los bitcoins en tu Bitcoin Wallet no tienes que tributar por ellos en la declaración de la Renta, pero sí en el Impuesto sobre el Patrimonio. Al igual que ocurre con las acciones, fondos de inversión y demás ahorros, el dinero que tengas se sumará a efectos de calcular este tributo y determinar si estás sujeto o no a presentarlo. <br> <br>
+        </p>
+    </div>
+    <footer>
+        <p>Contacto: info@bitcoinsincorporated.com</p>
+    </footer>
+
+</body>
+</html>

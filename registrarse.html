@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        color: white; /* Cambio de color de las letras a blanco */
+        background-color: black; /* Cambio de color de fondo a negro */
+    }
+
+    .navbar {
+        margin-bottom: 20px; /* Espacio para separar del contenido siguiente */
+    }
+
+    .container-bg {
+        background-image: url('images/cripto.r.jpg');
+        background-size: cover; /* Para cubrir todo el fondo */
+        background-position: center; /* Centrar la imagen */
+        padding: 10px; /* Espacio alrededor del contenido */
+        border-radius: 10px; /* Bordes redondeados */
+    }
+
+    .navbar-brand img {
+        width: 130px; /* Ajustar el tamaño del logo */
+        margin-right: 0px; /* Espacio entre el logo y el texto */
+    }
+</style>
+<body>
+
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo"><img src="images/LogoBlanco.png" alt=""></div>
+      
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+      
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li><a href="registrarse.html">Registrarse</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="bienvenido.html">Bienvenido</a></li>
+                <li><a href="lista.html">Lista</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </div>
+        </ul>
+      </nav>
+
+<div class="container-bg">
+    <!-- Tu contenido aquí -->
+    <div class="container mt-4">
+        <form id="myForm2" class="needs-validation" novalidate action="registro.php" method="post">
+            <div class="form-group">
+                <label for="nombre2">Nombre de usuario:</label>
+                <input type="text" class="form-control" id="nombre2" name="nombre2" placeholder="Ingresa tu nombre de usuario (texto + número)" required>
+                <div class="invalid-feedback" id="nombreError2" style="display: none;">El nombre de usuario debe contener texto y números.</div>
+            </div>
+            <div class="form-group">
+                <label for="correo2">Correo:</label>
+                <input type="email" class="form-control" id="correo2" name="correo2" placeholder="Ingresa tu correo electrónico" required>
+                <div class="invalid-feedback" id="correoError2" style="display: none;">El correo electrónico debe tener el formato correcto (usuario@dominio.com).</div>
+            </div>
+            <div class="form-group">
+                <label for="contraseña2">Contraseña:</label>
+                <input type="password" class="form-control" id="contraseña2" name="contraseña2" placeholder="Ingresa tu contraseña (mínimo 7 caracteres)" minlength="7" required>
+                <div class="invalid-feedback" id="contraseñaError2" style="display: none;">La contraseña debe tener al menos 7 caracteres.</div>
+            </div>
+            <div class="form-group">
+                <label for="confirmarContraseña">Confirmar Contraseña:</label>
+                <input type="password" class="form-control" id="confirmarContraseña" name="confirmarContraseña" placeholder="Confirma tu contraseña" required>
+                <div class="invalid-feedback" id="confirmarContraseñaError" style="display: none;">Las contraseñas no coinciden.</div>
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+   $(document).ready(function () {
+    $('#myForm2').submit(function (event) {
+        event.preventDefault();
+
+        var nombreUsuario = $('#nombre2').val();
+        var correoElectronico = $('#correo2').val();
+        var contraseña = $('#contraseña2').val();
+        var confirmarContraseña = $('#confirmarContraseña').val();
+
+        // Validar formato de nombre de usuario (texto + número)
+        var expRegNombreUsuario = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        var nombreUsuarioValido = expRegNombreUsuario.test(nombreUsuario);
+
+        if (!nombreUsuarioValido) {
+            $('#nombreError2').show();
+            return;
+        } else {
+            $('#nombreError2').hide();
+        }
+
+        // Validar formato de correo electrónico
+        var expRegCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var correoValido = expRegCorreo.test(correoElectronico);
+
+        if (!correoValido) {
+            $('#correoError2').show();
+            return;
+        } else {
+            $('#correoError2').hide();
+        }
+
+        // Validar longitud de contraseña (mínimo 7 caracteres)
+        if (contraseña.length < 7) {
+            $('#contraseñaError2').show();
+            return;
+        } else {
+            $('#contraseñaError2').hide();
+        }
+
+        // Validar que las contraseñas coincidan
+        if (contraseña !== confirmarContraseña) {
+            $('#confirmarContraseñaError').show();
+            return;
+        } else {
+            $('#confirmarContraseñaError').hide();
+        }
+
+        // Objeto con los datos del formulario
+        var formData = {
+            nombre: nombreUsuario,
+            correo: correoElectronico,
+            contraseña: contraseña
+        };
+
+        // Envío de datos a través de AJAX
+        $.ajax({
+            type: "POST",
+            url: "registro.php", //--  NO TENEMOS BASE DE DATOS SOLO VALIDAREMOS.
+            success: function (response) {
+                // Manejo de la respuesta del servidor
+                console.log(response);
+                alert('¡USUARIO REGISTRADO CON ÉXITO! ¡Bienvenido, ' + nombreUsuario + '!');
+                
+            },
+            error: function (error) {
+                // Manejo de errores
+                console.log(error);
+                alert('¡USUARIO REGISTRADO CON ÉXITO! ¡Bienvenido, ' + nombreUsuario + '!')
+                ;
+                window.location.href = "index.html?username=" + encodeURIComponent(nombreUsuario);
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
